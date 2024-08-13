@@ -1,17 +1,39 @@
-// configure mongodb conncection
-const mongoose = require('mongoose');
+const { default: mongoose } = require("mongoose");
 
-const connectDB = async () => {
-    try {
-        await mongoose.connect('mongodb://localhost:27017/classroom-app', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log('MongoDB connected...');
-    } catch (err) {
-        console.error(err.message);
-        process.exit(1);
+mongoose.connect("mongodb+srv://ADMIN:pY1CG5nwvc0GUxgV@cluster2.nzgdu.mongodb.net/");
+
+const studentSchema = new mongoose.Schema(
+    {
+        email: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        password:{
+          type : String,
+          required:true
+       }
     }
-};
+)
 
-module.exports = connectDB;
+const teacherSchema = new mongoose.Schema(
+    {
+        email: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        password:{
+          type : String,
+          required:true
+       }
+    }
+)
+
+const Student = mongoose.model("Principal", studentSchema);
+const Teacher = mongoose.model("Principal", teacherSchema);
+
+module.exports = {
+    Student,
+    Teacher
+}

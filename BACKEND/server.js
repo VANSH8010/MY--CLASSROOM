@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
+const mainRouter = require('./routes/')
 
-const C1 = require('./usertype/classroom'); 
-const P1 = require('./usertype/User'); 
+const C1 = require('./usertype/classroom');
 // const T1 = require('./usertype/Teacher'); 
 
-const PORT= process.env.PORT || 3000;
+const PORT= 3000;
 
+app.use("/api/v1", mainRouter);
 app.listen(PORT,() =>{
   console.log("listening to port number");
 });
