@@ -4,7 +4,6 @@ require("dotenv").config();
 
 Principal.use(express.json());
 
-// <<<<<<< HEAD
 Principal.post("/login", async (req, res) => {
     try {
         const body = req.body;
