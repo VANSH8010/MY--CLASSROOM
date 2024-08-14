@@ -14,7 +14,7 @@ student.post("/login", async (req, res) => {
 
         if(!STUDENT){
             return res.status(404).json({
-                message: "User not found"
+                message: "User not found! Contact The Principal or Teachers"
             })
         }
 

@@ -14,12 +14,12 @@ teacher.post("/login", async (req, res) => {
 
         if(!TEACHER){
             return res.status(404).json({
-                message: "User not found"
+                message: "User not found! Contact the Principal"
             })
         }
 
         res.status(200).json({
-            message: "Student user logged in"
+            message: "Teacher user logged in"
         })
 
     } catch (err) {
