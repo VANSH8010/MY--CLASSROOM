@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-mongoose.connect("mongodb+srv://ADMIN:pY1CG5nwvc0GUxgV@cluster2.nzgdu.mongodb.net/");
+mongoose.connect("mongodb+srv://ADMIN:OXMH3t0zXsPVFnGo@cluster2.nzgdu.mongodb.net/");
 
 const studentSchema = new mongoose.Schema(
     {
